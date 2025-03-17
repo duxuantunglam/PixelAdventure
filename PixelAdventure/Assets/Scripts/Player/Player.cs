@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     private Animator anim;
     private CapsuleCollider2D cd;
 
+    public PlayerInput playerInput { get; private set; }
+    private Vector2 moveInput;
+
     private bool canBeController = false;
 
     [Header("Movement")]
@@ -51,8 +54,6 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     private bool isAirBorne;
     private bool isWallDetected;
-    private float xInput;
-    private float yInput;
     private bool facingRight = true;
     private int facingDir = 1;          //facingDirection
 
@@ -67,6 +68,26 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         cd = GetComponent<CapsuleCollider2D>();
+
+        playerInput = new PlayerInput();
+    }
+
+    private void OnEnable()
+    {
+        playerInput.Enable();
+
+        playerInput.Player.Jump.performed += ctx => JumpButton();
+        playerInput.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+        playerInput.Player.Movement.canceled += ctx => moveInput = Vector2.zero;
+    }
+
+    private void OnDisable()
+    {
+        playerInput.Disable();
+
+        playerInput.Player.Jump.performed -= ctx => JumpButton();
+        playerInput.Player.Movement.performed -= ctx => moveInput = ctx.ReadValue<Vector2>();
+        playerInput.Player.Movement.canceled -= ctx => moveInput = Vector2.zero;
     }
 
     private void Start()
@@ -94,7 +115,7 @@ public class Player : MonoBehaviour
             return;
 
         HandleEnemyDetection();
-        HandleInput();
+        // HandleInput();
         HandleWallSlide();
         HandleMovement();
         HandleFlip();
@@ -241,14 +262,14 @@ public class Player : MonoBehaviour
 
     private void HandleInput()
     {
-        xInput = Input.GetAxis("Horizontal");
-        yInput = Input.GetAxis("Vertical");
+        // xInput = Input.GetAxis("Horizontal");
+        // yInput = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            JumpButton();
-            RequestBufferJump();
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     JumpButton();
+        //     RequestBufferJump();
+        // }
     }
 
     #region Buffer & Coyote jump
@@ -353,7 +374,7 @@ public class Player : MonoBehaviour
     private void HandleWallSlide()
     {
         bool canWallSlide = isWallDetected && rb.linearVelocity.y < 0;
-        float yModifier = yInput < 0 ? 1 : .05f;
+        float yModifier = moveInput.y < 0 ? 1 : .05f;
 
         if (canWallSlide == false)
             return;
@@ -382,12 +403,12 @@ public class Player : MonoBehaviour
         if (isWallJumping)
             return;
 
-        rb.linearVelocity = new Vector2(xInput * moveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
     }
 
     private void HandleFlip()
     {
-        if (xInput < 0 && facingRight || xInput > 0 && !facingRight)
+        if (moveInput.x < 0 && facingRight || moveInput.x > 0 && !facingRight)
             Flip();
     }
 
