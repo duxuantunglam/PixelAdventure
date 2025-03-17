@@ -22,15 +22,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Pause",
-                    "type": "Button",
-                    "id": "db8a6bf2-f367-4291-9d39-d4a9ef549416",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -176,10 +167,27 @@
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "317a3d10-b925-4100-939f-286a11d08913",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "b48274b2-2a1e-4273-9740-8332bd16d92f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
                 {
                     "name": "",
-                    "id": "3262d6d2-4a8e-4941-a491-1713725367bf",
+                    "id": "b7b9a4f8-ef2f-4945-a74a-789fd605ccdf",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
@@ -190,7 +198,7 @@
                 },
                 {
                     "name": "",
-                    "id": "e7e04617-5c15-4508-bd30-37b9f4a8d6e6",
+                    "id": "24dd57f7-c959-48e8-9d53-9f565091d4df",
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",

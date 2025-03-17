@@ -62,6 +62,8 @@
     "Cinemachine",
     "cooldown",
     "Dont",
+    "inputactions",
+    "inputsystem",
     "knockback",
     "Mathf",
     "paratemtrs",
