@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Scripting;
 
 public class Player : MonoBehaviour
@@ -15,7 +16,7 @@ public class Player : MonoBehaviour
     private Animator anim;
     private CapsuleCollider2D cd;
 
-    public PlayerInput playerInput { get; private set; }
+    public InputActionAsset playerInput { get; private set; }
     private Vector2 moveInput;
 
     private bool canBeController = false;
@@ -69,25 +70,25 @@ public class Player : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         cd = GetComponent<CapsuleCollider2D>();
 
-        playerInput = new PlayerInput();
+        playerInput = GetComponent<PlayerInput>().actions;
     }
 
     private void OnEnable()
     {
         playerInput.Enable();
 
-        playerInput.Player.Jump.performed += ctx => JumpButton();
-        playerInput.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        playerInput.Player.Movement.canceled += ctx => moveInput = Vector2.zero;
+        playerInput.FindAction("Jump").performed += ctx => JumpButton();
+        playerInput.FindAction("Movement").performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+        playerInput.FindAction("Movement").canceled += ctx => moveInput = Vector2.zero;
     }
 
     private void OnDisable()
     {
         playerInput.Disable();
 
-        playerInput.Player.Jump.performed -= ctx => JumpButton();
-        playerInput.Player.Movement.performed -= ctx => moveInput = ctx.ReadValue<Vector2>();
-        playerInput.Player.Movement.canceled -= ctx => moveInput = Vector2.zero;
+        playerInput.FindAction("Jump").performed -= ctx => JumpButton();
+        playerInput.FindAction("Movement").performed -= ctx => moveInput = ctx.ReadValue<Vector2>();
+        playerInput.FindAction("Movement").canceled -= ctx => moveInput = Vector2.zero;
     }
 
     private void Start()

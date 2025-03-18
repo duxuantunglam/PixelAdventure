@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 132531381901621857}
   - component: {fileID: 9188496104127031574}
   - component: {fileID: 1524494560782021135}
+  - component: {fileID: 1203856885413626826}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -237,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruitDrop: {fileID: 4639058309544246458, guid: e5b9eb4ce3029b74bb47da3ec6a986a0, type: 3}
-  gameDifficulty: 0
+  gameDifficulty: 2
   moveSpeed: 8
   jumpForce: 14
   doubleJumpForce: 11
@@ -265,6 +266,36 @@ MonoBehaviour:
   deathVFX: {fileID: 1403028524283316741, guid: aea536839a9135148a904aee28ae61c0, type: 3}
   dustFx: {fileID: 6281054350586361896}
   skinID: 0
+--- !u!114 &1203856885413626826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4404046186474289309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 4964aefb7a6715f4c87414910580e1d0, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &6284816625391569035
 GameObject:
   m_ObjectHideFlags: 0

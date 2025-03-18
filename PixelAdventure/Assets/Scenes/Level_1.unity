@@ -17005,10 +17005,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1524494560782021135, guid: c71bcb11b2f956f4ab099c7f71623a79, type: 3}
-      propertyPath: gameDifficulty
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4404046186474289309, guid: c71bcb11b2f956f4ab099c7f71623a79, type: 3}
       propertyPath: m_Name
       value: Player
@@ -17194,6 +17190,6 @@ SceneRoots:
   - {fileID: 892005253328152592}
   - {fileID: 2105985506}
   - {fileID: 721004610}
-  - {fileID: 2672992998284799042}
   - {fileID: 2688754641074385247}
   - {fileID: 2123327946}
+  - {fileID: 2672992998284799042}
