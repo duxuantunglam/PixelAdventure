@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3796788167246526744}
   - component: {fileID: 1907743110388299164}
   - component: {fileID: 7084756148697535237}
+  - component: {fileID: -4012860508507588559}
   m_Layer: 5
   m_Name: Level_Button
   m_TagString: Untagged
@@ -151,6 +152,18 @@ MonoBehaviour:
   levelNumberText: {fileID: 2721560657097169748}
   bestTimeText: {fileID: 6387332828672153161}
   fruitText: {fileID: 5654544692479006542}
+--- !u!114 &-4012860508507588559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271748890331350088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97855c2e88a90634ca31e9a45e5ff111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1595901759584498243
 GameObject:
   m_ObjectHideFlags: 0
