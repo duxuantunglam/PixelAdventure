@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UI_InGame : MonoBehaviour
 {
-    // [SerializeField] private GameObject firstSelected;
+    [SerializeField] private GameObject firstSelected;
 
     private PlayerInput playerInput;
     private Player player;
@@ -63,7 +63,7 @@ public class UI_InGame : MonoBehaviour
 
     private void PauseTheGame()
     {
-        // EventSystem.current.SetSelectedGameObject(firstSelected);
+        EventSystem.current.SetSelectedGameObject(firstSelected);
         player.playerInput.Disable();
         isPaused = true;
         Time.timeScale = 0;
