@@ -72,6 +72,7 @@
     "Respawn",
     "Rigidbody",
     "Rino",
+    "splitscreen",
     "UGUI"
   ],
   "dotnet.preferCSharpExtension": true

@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6365fd82571d4a847945596b92bd004c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxPlayerCount: 1
+  playerList: []
   respawnPoint: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &4118652677228365495
@@ -60,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 3
-  m_MaxPlayerCount: -1
+  m_MaxPlayerCount: 4
   m_AllowJoining: 1
   m_JoinBehavior: 1
   m_PlayerJoinedEvent:

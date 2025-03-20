@@ -133,7 +133,7 @@ public class Player : MonoBehaviour
             if (gameManager.FruitCollected() <= 0)
             {
                 Die();
-                gameManager.RestartLevel();
+                // gameManager.RestartLevel();
             }
             else
             {
@@ -147,7 +147,7 @@ public class Player : MonoBehaviour
         if (gameDifficulty == DifficultyType.Hard)
         {
             Die();
-            gameManager.RestartLevel();
+            // gameManager.RestartLevel();
         }
     }
 
@@ -319,6 +319,8 @@ public class Player : MonoBehaviour
     {
         dustFx.Play();
         AudioManager.instance.PlaySFX(3);
+
+        // StopCoroutine(WallJumpRoutine());
         isWallJumping = false;
         canDoubleJump = false;
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpForce);
