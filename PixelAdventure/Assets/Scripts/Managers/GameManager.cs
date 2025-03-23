@@ -49,6 +49,8 @@ public class GameManager : MonoBehaviour
 
         CollectFruitInfo();
         CreateManagersIfNeeded();
+
+        PlayerManager.instance.EnableJoinAndUpdateLifePoints();
     }
 
     private void Update()

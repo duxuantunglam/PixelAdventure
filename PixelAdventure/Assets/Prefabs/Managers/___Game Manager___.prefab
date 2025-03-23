@@ -49,6 +49,7 @@ MonoBehaviour:
   fruitAreRandom: 0
   fruitCollected: 0
   totalFruit: 0
+  fruitParent: {fileID: 0}
   canReactive: 0
   audioManager: {fileID: 6983175059511337569, guid: cd8fb9a864ee31248902389e25c5812e, type: 3}
   playerManager: {fileID: 947606383675688172, guid: a6143b48c8b97c64185ac28845ddd336, type: 3}

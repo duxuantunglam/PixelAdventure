@@ -341,7 +341,6 @@ MonoBehaviour:
   maxSpeed: 8
   speedUpRate: 1.5
   impactPower: {x: 5, y: 9}
-  detectionRange: 15
   dustFx: {fileID: 4710365576317921330}
   cameraImpulseDir: {x: 0.6, y: 0.6}
 --- !u!114 &6536465356378102919

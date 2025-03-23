@@ -9513,18 +9513,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelCamera
       objectReference: {fileID: 0}
-    - target: {fileID: 2078519728946674681, guid: 22085f715810c1547b3043a7bc060d5a, type: 3}
-      propertyPath: m_Size.x
-      value: 52.481
-      objectReference: {fileID: 0}
-    - target: {fileID: 2078519728946674681, guid: 22085f715810c1547b3043a7bc060d5a, type: 3}
-      propertyPath: m_Offset.x
-      value: 1.7423763
-      objectReference: {fileID: 0}
-    - target: {fileID: 2078519728946674681, guid: 22085f715810c1547b3043a7bc060d5a, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.44696808
-      objectReference: {fileID: 0}
     - target: {fileID: 8318517623154119742, guid: 22085f715810c1547b3043a7bc060d5a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.83
@@ -15919,23 +15907,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1376601958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8192858241696384739, guid: eaf44c5b8f5c00142bac84fcdeb5cfd5, type: 3}
-  m_PrefabInstance: {fileID: 3611891987620370294}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1376601960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376601958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adb3ccdddb8547c4fabadc4e6651c329, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1493426450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15944,14 +15915,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4504366024242513464, guid: ba52afbf51c1cb2499174fd99930c66d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.5663662
-      objectReference: {fileID: 0}
-    - target: {fileID: 4504366024242513464, guid: ba52afbf51c1cb2499174fd99930c66d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.00000047683716
-      objectReference: {fileID: 0}
     - target: {fileID: 6027431493000403017, guid: ba52afbf51c1cb2499174fd99930c66d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.28671
@@ -16009,10 +15972,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4793775453370122289, guid: f8b4e779eb4017c429bdefe6ed058cb0, type: 3}
-      propertyPath: fruitType
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7534217799504511505, guid: f8b4e779eb4017c429bdefe6ed058cb0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.5161443
@@ -16062,23 +16021,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b4e779eb4017c429bdefe6ed058cb0, type: 3}
---- !u!1 &1782703820 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1241570991982795936, guid: eaf44c5b8f5c00142bac84fcdeb5cfd5, type: 3}
-  m_PrefabInstance: {fileID: 3611891987620370294}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1782703822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782703820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adb3ccdddb8547c4fabadc4e6651c329, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1796615431
 GameObject:
   m_ObjectHideFlags: 0
@@ -16470,14 +16412,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3504599152729756477, guid: f0888e3e89cc8974b91fc96be3892ce0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -18.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504599152729756477, guid: f0888e3e89cc8974b91fc96be3892ce0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.37
-      objectReference: {fileID: 0}
     - target: {fileID: 4366336316158739422, guid: f0888e3e89cc8974b91fc96be3892ce0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.14
@@ -16592,10 +16526,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 494626894738187285, guid: eaf44c5b8f5c00142bac84fcdeb5cfd5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.52
-      objectReference: {fileID: 0}
     - target: {fileID: 880091394272500258, guid: eaf44c5b8f5c00142bac84fcdeb5cfd5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11
@@ -16640,21 +16570,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trap_Saw
       objectReference: {fileID: 0}
-    - target: {fileID: 7167592366505786819, guid: eaf44c5b8f5c00142bac84fcdeb5cfd5, type: 3}
-      propertyPath: wayPoint.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 7567345519795308981, guid: eaf44c5b8f5c00142bac84fcdeb5cfd5, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1241570991982795936, guid: eaf44c5b8f5c00142bac84fcdeb5cfd5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1782703822}
-    - targetCorrespondingSourceObject: {fileID: 8192858241696384739, guid: eaf44c5b8f5c00142bac84fcdeb5cfd5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1376601960}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaf44c5b8f5c00142bac84fcdeb5cfd5, type: 3}
 --- !u!1001 &4296193333487223515
 PrefabInstance:
@@ -16721,10 +16640,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1217842867709156740, guid: fba8d464788183942b811efe3c6342b6, type: 3}
-      propertyPath: fruitType
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 3758934637742290400, guid: fba8d464788183942b811efe3c6342b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.13
@@ -16782,10 +16697,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1896059449296708816, guid: baa0f5a03b5025745a70bba02a37fa2a, type: 3}
-      propertyPath: pushForce
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 2331466156716676012, guid: baa0f5a03b5025745a70bba02a37fa2a, type: 3}
       propertyPath: m_Name
       value: Trap_SpikedBall
@@ -16900,17 +16811,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4207054065744502664, guid: 14bf5d7638bbce242b38b2ba1ed61412, type: 3}
-      propertyPath: pushPower
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 4974209769719065572, guid: 14bf5d7638bbce242b38b2ba1ed61412, type: 3}
       propertyPath: m_Name
       value: Trap_Trampoline
-      objectReference: {fileID: 0}
-    - target: {fileID: 4974209769719065572, guid: 14bf5d7638bbce242b38b2ba1ed61412, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5585083575866273421, guid: 14bf5d7638bbce242b38b2ba1ed61412, type: 3}
       propertyPath: m_LocalPosition.x

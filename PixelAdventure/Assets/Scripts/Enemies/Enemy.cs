@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     private SpriteRenderer sr => GetComponent<SpriteRenderer>();
-    protected Transform player;
+    protected List<Player> playerList;
     protected Animator anim;
     protected Rigidbody2D rb;
     protected Collider2D[] colliders;
@@ -51,13 +50,13 @@ public class Enemy : MonoBehaviour
             Flip();
         }
 
-        PlayerManager.OnPlayerRespawn += UpdatePlayerReference;
+        PlayerManager.OnPlayerRespawn += UpdatePlayersReference;
+        PlayerManager.OnPlayerDeath += UpdatePlayersReference;
     }
 
-    private void UpdatePlayerReference()
+    private void UpdatePlayersReference()
     {
-        if (player == null)
-            player = PlayerManager.instance.player.transform;
+        playerList = PlayerManager.instance.GetPlayerList();
     }
 
     protected virtual void Update()
@@ -85,7 +84,8 @@ public class Enemy : MonoBehaviour
         if (Random.Range(0, 100) < 50)
             deathRotationDirection = deathRotationDirection * -1;
 
-        PlayerManager.OnPlayerRespawn -= UpdatePlayerReference;
+        PlayerManager.OnPlayerRespawn -= UpdatePlayersReference;
+        PlayerManager.OnPlayerDeath -= UpdatePlayersReference;
         Destroy(gameObject, 10);
     }
 
@@ -108,7 +108,7 @@ public class Enemy : MonoBehaviour
     }
 
     [ContextMenu("Change Facing Direction")]
-    public void FlipDefaultFacingDireciton()
+    public void FlipDefaultFacingDirection()
     {
         sr.flipX = !sr.flipX;
     }

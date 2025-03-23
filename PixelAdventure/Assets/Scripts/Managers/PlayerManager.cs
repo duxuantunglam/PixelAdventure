@@ -6,24 +6,27 @@ using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
-    public PlayerInputManager playerInputManager { get; private set; }
     public static event Action OnPlayerRespawn;
+    public static event Action OnPlayerDeath;
+    public PlayerInputManager playerInputManager { get; private set; }
     public static PlayerManager instance;
 
+    public int lifePoints;
     public int maxPlayerCount = 1;
 
     [Header("Player")]
     [SerializeField] private List<Player> playerList = new List<Player>();
     [SerializeField] private Transform respawnPoint;
-    public Player player;
     [SerializeField] private string[] playerDevice;
 
     private void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
+
         if (instance == null)
             instance = this;
         else
-            Destroy(gameObject);
+            Destroy(this.gameObject);
 
         playerInputManager = GetComponent<PlayerInputManager>();
         playerInputManager.SetMaximumPlayerCount(maxPlayerCount);
@@ -43,11 +46,18 @@ public class PlayerManager : MonoBehaviour
         playerInputManager.onPlayerLeft -= RemovePlayer;
     }
 
+    public void EnableJoinAndUpdateLifePoints()
+    {
+        // splitscreenSetup = FindFirstObjectByType<LevelSplitscreenSetup>();
+
+        playerInputManager.EnableJoining();
+        // playerCountWinCondition = maxPlayerCount;
+        lifePoints = maxPlayerCount;
+        UI_InGame.instance.UpdateLifePointsUI(lifePoints, maxPlayerCount);
+    }
+
     private void AddPlayer(PlayerInput newPlayer)
     {
-        if (this.player == null)
-            this.player = player.GetComponent<Player>();
-
         Player playerScript = newPlayer.GetComponent<Player>();
 
         playerList.Add(playerScript);
@@ -79,21 +89,36 @@ public class PlayerManager : MonoBehaviour
         playerList.Remove(playerScript);
 
 
-        // if (CanRemoveLifePoints() && lifePoints > 0)
-        //     lifePoints--;
+        if (CanRemoveLifePoints() && lifePoints > 0)
+            lifePoints--;
 
-        // if (lifePoints <= 0)
-        // {
-        //     playerCountWinCondition--;
-        //     playerInputManager.DisableJoining();
+        if (lifePoints <= 0)
+        {
+            // playerCountWinCondition--;
+            playerInputManager.DisableJoining();
 
-        //     if (playerList.Count <= 0)
-        //         GameManager.instance.RestartLevel();
-        // }
+            // if (playerList.Count <= 0)
+            GameManager.instance.RestartLevel();
+        }
 
-        // UI_InGame.instance.UpdateLifePointsUI(lifePoints, maxPlayerCount);
+        UI_InGame.instance.UpdateLifePointsUI(lifePoints, maxPlayerCount);
 
-        // OnPlayerDeath?.Invoke();
+        OnPlayerDeath?.Invoke();
+    }
+
+    private bool CanRemoveLifePoints()
+    {
+        if (DifficultyManager.instance.difficulty == DifficultyType.Hard)
+        {
+            return true;
+        }
+
+        if (GameManager.instance.fruitCollected <= 0 && DifficultyManager.instance.difficulty == DifficultyType.Normal)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private int GetPlayerNumber(PlayerInput newPlayer)
@@ -115,12 +140,13 @@ public class PlayerManager : MonoBehaviour
                     newPlayerNumber = i;
                     break;
                 }
-
             }
         }
 
         return newPlayerNumber;
     }
+
+    public List<Player> GetPlayerList() => playerList;
 
     public void UpdateRespawnPosition(Transform newRespawnPoint) => respawnPoint = newRespawnPoint;
 

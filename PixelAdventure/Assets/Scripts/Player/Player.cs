@@ -73,24 +73,6 @@ public class Player : MonoBehaviour
         playerInput = GetComponent<PlayerInput>().actions;
     }
 
-    private void OnEnable()
-    {
-        playerInput.Enable();
-
-        playerInput.FindAction("Jump").performed += ctx => JumpButton();
-        playerInput.FindAction("Movement").performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        playerInput.FindAction("Movement").canceled += ctx => moveInput = Vector2.zero;
-    }
-
-    private void OnDisable()
-    {
-        playerInput.Disable();
-
-        playerInput.FindAction("Jump").performed -= ctx => JumpButton();
-        playerInput.FindAction("Movement").performed -= ctx => moveInput = ctx.ReadValue<Vector2>();
-        playerInput.FindAction("Movement").canceled -= ctx => moveInput = Vector2.zero;
-    }
-
     private void Start()
     {
         defaultGravityScale = rb.gravityScale;
@@ -132,7 +114,6 @@ public class Player : MonoBehaviour
             if (gameManager.FruitCollected() <= 0)
             {
                 Die();
-                // gameManager.RestartLevel();
             }
             else
             {
@@ -146,7 +127,6 @@ public class Player : MonoBehaviour
         if (gameDifficulty == DifficultyType.Hard)
         {
             Die();
-            // gameManager.RestartLevel();
         }
     }
 
@@ -189,7 +169,6 @@ public class Player : MonoBehaviour
 
     public void RespawnFinished(bool finished)
     {
-
         if (finished)
         {
             rb.gravityScale = defaultGravityScale;
@@ -426,5 +405,39 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(enemyCheck.position, enemyCheckRadius);
         Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheckDistance));
         Gizmos.DrawLine(transform.position, new Vector2(transform.position.x + (wallCheckDistance * facingDir), transform.position.y));
+    }
+
+    private void OnEnable()
+    {
+        playerInput.Enable();
+
+        playerInput.FindAction("Jump").performed += OnJumpPerformed;
+        playerInput.FindAction("Movement").performed += OnMovementPerformed;
+        playerInput.FindAction("Movement").canceled += OnMovementCanceled;
+    }
+
+    private void OnDisable()
+    {
+        playerInput.Disable();
+
+        playerInput.FindAction("Jump").performed -= OnJumpPerformed;
+        playerInput.FindAction("Movement").performed -= OnMovementPerformed;
+        playerInput.FindAction("Movement").canceled -= OnMovementCanceled;
+    }
+
+    private void OnMovementCanceled(InputAction.CallbackContext context)
+    {
+        moveInput = Vector2.zero;
+    }
+
+    private void OnMovementPerformed(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
+    }
+
+    private void OnJumpPerformed(InputAction.CallbackContext context)
+    {
+        JumpButton();
+        AttemptBufferJump();
     }
 }
