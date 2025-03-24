@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
 
     public int lifePoints;
     public int maxPlayerCount = 1;
+    public int playerCountWinCondition;
 
     [Header("Player")]
     [SerializeField] private List<Player> playerList = new List<Player>();
@@ -51,7 +52,7 @@ public class PlayerManager : MonoBehaviour
         // splitscreenSetup = FindFirstObjectByType<LevelSplitscreenSetup>();
 
         playerInputManager.EnableJoining();
-        // playerCountWinCondition = maxPlayerCount;
+        playerCountWinCondition = maxPlayerCount;
         lifePoints = maxPlayerCount;
         UI_InGame.instance.UpdateLifePointsUI(lifePoints, maxPlayerCount);
     }
@@ -94,11 +95,11 @@ public class PlayerManager : MonoBehaviour
 
         if (lifePoints <= 0)
         {
-            // playerCountWinCondition--;
+            playerCountWinCondition--;
             playerInputManager.DisableJoining();
 
-            // if (playerList.Count <= 0)
-            GameManager.instance.RestartLevel();
+            if (playerList.Count <= 0)
+                GameManager.instance.RestartLevel();
         }
 
         UI_InGame.instance.UpdateLifePointsUI(lifePoints, maxPlayerCount);
