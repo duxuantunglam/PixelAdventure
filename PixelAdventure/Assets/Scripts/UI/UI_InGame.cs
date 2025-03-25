@@ -45,6 +45,8 @@ public class UI_InGame : MonoBehaviour
     private void Start()
     {
         fadeEffect.ScreenFade(0, 1);
+        GameObject pressStartText = FindFirstObjectByType<UI_TextBlinkEffect>().gameObject;
+        PlayerManager.instance.objectsToDisable.Add(pressStartText);
     }
 
     private void Update()

@@ -17014,6 +17014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 957386618704469693, guid: 22085f715810c1547b3043a7bc060d5a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8318517623154119742, guid: 22085f715810c1547b3043a7bc060d5a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.83
@@ -17067,6 +17071,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4504366024242513464, guid: ba52afbf51c1cb2499174fd99930c66d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.7567177
+      objectReference: {fileID: 0}
     - target: {fileID: 6027431493000403017, guid: ba52afbf51c1cb2499174fd99930c66d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.28671

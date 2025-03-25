@@ -11,6 +11,8 @@ public class PlayerManager : MonoBehaviour
     public PlayerInputManager playerInputManager { get; private set; }
     public static PlayerManager instance;
 
+    public List<GameObject> objectsToDisable;
+
     public int lifePoints;
     public int maxPlayerCount = 1;
     public int playerCountWinCondition;
@@ -30,7 +32,6 @@ public class PlayerManager : MonoBehaviour
             Destroy(this.gameObject);
 
         playerInputManager = GetComponent<PlayerInputManager>();
-        playerInputManager.SetMaximumPlayerCount(maxPlayerCount);
     }
 
     private void OnEnable()
@@ -45,6 +46,12 @@ public class PlayerManager : MonoBehaviour
     {
         playerInputManager.onPlayerJoined -= AddPlayer;
         playerInputManager.onPlayerLeft -= RemovePlayer;
+    }
+
+    public void SetupMaxPlayersCount(int newPlayersCount)
+    {
+        maxPlayerCount = newPlayersCount;
+        playerInputManager.SetMaximumPlayerCount(maxPlayerCount);
     }
 
     public void EnableJoinAndUpdateLifePoints()
@@ -71,11 +78,11 @@ public class PlayerManager : MonoBehaviour
 
         playerScript.UpdateSkin(newPlayerSkinId);
 
-        // foreach (GameObject gameObject in objectsToDisable)
-        // {
-        //     if (gameObject != null)
-        //         gameObject.SetActive(false);
-        // }
+        foreach (GameObject gameObject in objectsToDisable)
+        {
+            // if (gameObject != null)
+            gameObject.SetActive(false);
+        }
 
         // if (playerInputManager.splitScreen == true)
         // {
