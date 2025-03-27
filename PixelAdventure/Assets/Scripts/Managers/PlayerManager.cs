@@ -8,6 +8,9 @@ public class PlayerManager : MonoBehaviour
 {
     public static event Action OnPlayerRespawn;
     public static event Action OnPlayerDeath;
+
+    private LevelSplitScreenSetup splitscreenSetup;
+
     public PlayerInputManager playerInputManager { get; private set; }
     public static PlayerManager instance;
 
@@ -16,7 +19,6 @@ public class PlayerManager : MonoBehaviour
     public int lifePoints;
     public int maxPlayerCount = 1;
     public int playerCountWinCondition;
-
     [Header("Player")]
     [SerializeField] private List<Player> playerList = new List<Player>();
     [SerializeField] private Transform respawnPoint;
@@ -56,7 +58,7 @@ public class PlayerManager : MonoBehaviour
 
     public void EnableJoinAndUpdateLifePoints()
     {
-        // splitscreenSetup = FindFirstObjectByType<LevelSplitscreenSetup>();
+        splitscreenSetup = FindFirstObjectByType<LevelSplitScreenSetup>();
 
         playerInputManager.EnableJoining();
         playerCountWinCondition = maxPlayerCount;
@@ -66,6 +68,7 @@ public class PlayerManager : MonoBehaviour
 
     private void AddPlayer(PlayerInput newPlayer)
     {
+
         Player playerScript = newPlayer.GetComponent<Player>();
 
         playerList.Add(playerScript);
@@ -80,15 +83,15 @@ public class PlayerManager : MonoBehaviour
 
         foreach (GameObject gameObject in objectsToDisable)
         {
-            // if (gameObject != null)
-            gameObject.SetActive(false);
+            if (gameObject != null)
+                gameObject.SetActive(false);
         }
 
-        // if (playerInputManager.splitScreen == true)
-        // {
-        //     newPlayer.camera = splitscreenSetup.mainCamera[newPlayerNumber];
-        //     splitscreenSetup.cinemachineCamera[newPlayerNumber].Follow = newPlayer.transform;
-        // }
+        if (playerInputManager.splitScreen == true)
+        {
+            newPlayer.camera = splitscreenSetup.mainCamera[newPlayerNumber];
+            splitscreenSetup.cinemachineCamera[newPlayerNumber].Follow = newPlayer.transform;
+        }
     }
 
     private void RemovePlayer(PlayerInput player)

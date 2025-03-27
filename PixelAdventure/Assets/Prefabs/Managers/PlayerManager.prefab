@@ -45,11 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6365fd82571d4a847945596b92bd004c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectsToDisable: []
   lifePoints: 2
   maxPlayerCount: 2
+  playerCountWinCondition: 0
   playerList: []
   respawnPoint: {fileID: 0}
-  player: {fileID: 0}
   playerDevice:
   - Empty
   - Empty
@@ -69,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 3
   m_MaxPlayerCount: 4
-  m_AllowJoining: 1
+  m_AllowJoining: 0
   m_JoinBehavior: 1
   m_PlayerJoinedEvent:
     m_PersistentCalls:
