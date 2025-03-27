@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -42,8 +41,6 @@ public class PlayerManager : MonoBehaviour
         playerInputManager.onPlayerLeft += RemovePlayer;
     }
 
-
-
     private void OnDisable()
     {
         playerInputManager.onPlayerJoined -= AddPlayer;
@@ -68,7 +65,6 @@ public class PlayerManager : MonoBehaviour
 
     private void AddPlayer(PlayerInput newPlayer)
     {
-
         Player playerScript = newPlayer.GetComponent<Player>();
 
         playerList.Add(playerScript);
@@ -98,7 +94,6 @@ public class PlayerManager : MonoBehaviour
     {
         Player playerScript = player.GetComponent<Player>();
         playerList.Remove(playerScript);
-
 
         if (CanRemoveLifePoints() && lifePoints > 0)
             lifePoints--;
@@ -151,6 +146,7 @@ public class PlayerManager : MonoBehaviour
                     newPlayerNumber = i;
                     break;
                 }
+
             }
         }
 
@@ -160,7 +156,6 @@ public class PlayerManager : MonoBehaviour
     public List<Player> GetPlayerList() => playerList;
 
     public void UpdateRespawnPosition(Transform newRespawnPoint) => respawnPoint = newRespawnPoint;
-
     private void PlaceNewPlayerAtRespawnPoint(Transform newPlayer)
     {
         if (respawnPoint == null)

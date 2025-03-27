@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishPoint : MonoBehaviour
 {
-    private Animator anim;
+    private Animator anim => GetComponent<Animator>();
     private int playersInTrigger;
 
     private bool CanFinishLevel()
@@ -25,7 +26,9 @@ public class FinishPoint : MonoBehaviour
             AudioManager.instance.PlaySFX(2);
 
             anim.SetTrigger("active");
-            GameManager.instance.LevelFinished();
+
+            if (CanFinishLevel())
+                GameManager.instance.LevelFinished();
         }
     }
 
