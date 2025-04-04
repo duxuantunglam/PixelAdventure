@@ -98,7 +98,6 @@ public class UI_MainMenu : MonoBehaviour
 
         DifficultyManager.instance.LoadDifficulty(difficultyIndex);
         SceneManager.LoadScene("Level_" + levelToLoad);
-
         AudioManager.instance.PlaySFX(4);
     }
 
@@ -116,9 +115,9 @@ public class UI_MainMenu : MonoBehaviour
 
     public void QuitButton()
     {
-        if (EditorApplication.isPlaying)
-            EditorApplication.isPlaying = false;
-        else
-            Application.Quit();
+        // if (EditorApplication.isPlaying)
+        //     EditorApplication.isPlaying = false;
+        // else
+        Application.Quit();
     }
 }

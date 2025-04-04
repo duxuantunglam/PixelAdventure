@@ -31,7 +31,6 @@ public class LevelCamera : MonoBehaviour
 
     private void Update()
     {
-
         if (cameraActive == false)
             return;
 
