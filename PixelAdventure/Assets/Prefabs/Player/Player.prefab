@@ -399,7 +399,7 @@ MonoBehaviour:
   - {fileID: 22100000, guid: 81db67cae8fd2e04cae7f820763da9cb, type: 2}
   - {fileID: 22100000, guid: aad676d524b041b478499777a15639c6, type: 2}
   deathVFX: {fileID: 1403028524283316741, guid: aea536839a9135148a904aee28ae61c0, type: 3}
-  dustFx: {fileID: 6281054350586361896}
+  dustFX: {fileID: 4029894142044975567, guid: 0eb5e7084e8ad1d4f98d79648fd56edb, type: 3}
   skinID: 0
 --- !u!114 &1203856885413626826
 MonoBehaviour:
@@ -554,10 +554,5 @@ PrefabInstance:
 --- !u!4 &2753154289877807545 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5112409956621613150, guid: 0eb5e7084e8ad1d4f98d79648fd56edb, type: 3}
-  m_PrefabInstance: {fileID: 6973761323819305447}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6281054350586361896 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4029894142044975567, guid: 0eb5e7084e8ad1d4f98d79648fd56edb, type: 3}
   m_PrefabInstance: {fileID: 6973761323819305447}
   m_PrefabAsset: {fileID: 0}

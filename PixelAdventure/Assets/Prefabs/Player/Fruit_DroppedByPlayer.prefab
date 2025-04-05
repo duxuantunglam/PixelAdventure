@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7824215476305056513}
   - component: {fileID: 7382355310268108572}
   m_Layer: 0
-  m_Name: Fruit - DroppedByPlayer
+  m_Name: Fruit_DroppedByPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
