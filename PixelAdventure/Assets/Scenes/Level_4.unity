@@ -17506,7 +17506,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4504366024242513464, guid: ba52afbf51c1cb2499174fd99930c66d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.7567177
+      value: 56.7867
       objectReference: {fileID: 0}
     - target: {fileID: 6027431493000403017, guid: ba52afbf51c1cb2499174fd99930c66d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17917,6 +17917,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1133633365940412519, guid: 2942c3bb340caed4882ce33b3969725b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4920630329960274640, guid: 2942c3bb340caed4882ce33b3969725b, type: 3}
       propertyPath: m_Name
       value: UI_InGame
